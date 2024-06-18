@@ -18,7 +18,7 @@ def remove_redundant_points(coords, n):
 
 def find_circles(img, skeleton):
     circles = []
-    filtered_skeleton = remove_redundant_points(skeleton, 3)
+    filtered_skeleton = remove_redundant_points(skeleton, 2)
     for y, x in filtered_skeleton:
         for r in range(13, -1, -1):
             if x-r >= 0 and y-r >= 0 and x+r <= img.shape[0] and y-r <= img.shape[1] and np.min(img[x-r:x+r+1, y-r:y+r+1]) == 255:
